@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteapp/cubits/notes/notes_cubit.dart';
 import 'package:noteapp/views/widgets/add_note_bottom_sheet.dart';
 import 'package:noteapp/views/widgets/note_view_body.dart';
 
@@ -14,6 +16,7 @@ class NoteView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -23,7 +26,7 @@ class NoteView extends StatelessWidget {
             }
           );
         },
-        child: const Icon(
+        child: Icon(
           Icons.add,
           color: Colors.black,
         ),
